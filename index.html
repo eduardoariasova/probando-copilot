@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Juega a Piedra, Papel o Tijera contra la computadora."
+    />
+    <title>Piedra, Papel o Tijera</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="game">
+      <header class="game__header">
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="Cambiar a modo claro"
+          aria-pressed="false"
+        >
+          <span class="theme-toggle__icon" aria-hidden="true">☀</span>
+          <span id="theme-label">Modo claro</span>
+        </button>
+        <p class="eyebrow">UN CLÁSICO DE SIEMPRE</p>
+        <h1>Piedra, Papel<br class="mobile-break" /> o Tijera</h1>
+        <p class="subtitle">Elige tu jugada y reta a la computadora.</p>
+      </header>
+
+      <section class="scoreboard" aria-label="Marcador">
+        <div class="score">
+          <span class="score__label">TÚ</span>
+          <strong class="score__value" id="player-score" aria-live="polite">0</strong>
+        </div>
+        <div class="scoreboard__divider" aria-hidden="true">:</div>
+        <div class="score">
+          <span class="score__label">COMPUTADORA</span>
+          <strong class="score__value" id="computer-score" aria-live="polite">0</strong>
+        </div>
+      </section>
+
+      <section class="round" aria-live="polite" aria-atomic="true">
+        <div class="round__choices">
+          <div class="choice-display">
+            <span class="choice-display__label">TU JUGADA</span>
+            <span class="choice-display__icon" id="player-choice" aria-hidden="true">?</span>
+            <span class="choice-display__name" id="player-choice-name">Elige abajo</span>
+          </div>
+          <span class="round__versus" aria-hidden="true">VS</span>
+          <div class="choice-display">
+            <span class="choice-display__label">SU JUGADA</span>
+            <span class="choice-display__icon" id="computer-choice" aria-hidden="true">?</span>
+            <span class="choice-display__name" id="computer-choice-name">Esperando...</span>
+          </div>
+        </div>
+        <p class="round__result" id="result">¿Listo para jugar?</p>
+        <p class="round__message" id="message">La primera ronda es tuya.</p>
+      </section>
+
+      <section class="play" aria-labelledby="play-title">
+        <h2 id="play-title">Elige tu jugada</h2>
+        <div class="play__options">
+          <button class="move" type="button" data-choice="piedra" aria-label="Elegir piedra">
+            <span class="move__icon" aria-hidden="true">✊</span>
+            <span class="move__name">Piedra</span>
+          </button>
+          <button class="move" type="button" data-choice="papel" aria-label="Elegir papel">
+            <span class="move__icon" aria-hidden="true">✋</span>
+            <span class="move__name">Papel</span>
+          </button>
+          <button class="move" type="button" data-choice="tijera" aria-label="Elegir tijera">
+            <span class="move__icon" aria-hidden="true">✌️</span>
+            <span class="move__name">Tijera</span>
+          </button>
+        </div>
+      </section>
+
+      <button class="reset" id="reset" type="button">Reiniciar partida</button>
+      <footer>¿Qué le gana a qué? Piedra &gt; Tijera &gt; Papel &gt; Piedra</footer>
+    </main>
+  </body>
+</html>
